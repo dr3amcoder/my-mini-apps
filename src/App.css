@@ -1,0 +1,159 @@
+/* =========================
+   Global Reset & Base
+========================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+/* =========================
+   Layout
+========================= */
+
+.app-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  width: 100%;
+  max-width: 1000px;
+}
+
+.container {
+  background: white;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  text-align: center;
+}
+
+/* =========================
+   Typography
+========================= */
+
+.title-lg {
+  font-size: 4rem;
+  color: #667eea;
+  margin-bottom: 30px;
+}
+
+.title-md {
+  font-size: 2rem;
+  color: #667eea;
+  margin-bottom: 30px;
+}
+
+.text-muted {
+  color: #666;
+  font-size: 1rem;
+}
+
+.text-highlight {
+  color: #667eea;
+  font-weight: 600;
+}
+
+/* =========================
+   Form Layout
+========================= */
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 25px;
+  text-align: left;
+}
+
+.section.column {
+  align-items: flex-start;
+}
+
+/* =========================
+   Inputs
+========================= */
+
+.input {
+  width: 100%;
+  padding: 14px;
+  border-radius: 10px;
+  border: 2px solid #667eea;
+  font-size: 1rem;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.input:focus {
+  border-color: #764ba2;
+  box-shadow: 0 0 0 3px rgba(118, 75, 162, 0.2);
+}
+
+input[type="checkbox"] {
+  margin-right: 8px;
+  accent-color: #667eea;
+  transform: scale(1.1);
+}
+
+/* =========================
+   Buttons
+========================= */
+
+.btn {
+  padding: 15px;
+  border-radius: 50px;
+  border: none;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(102, 126, 234, 0.4);
+}
+
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* =========================
+   Utility Text
+========================= */
+
+.warning {
+  color: #e74c3c;
+  font-weight: 600;
+  margin: 5px 0;
+}
+
+/* =========================
+   Event / Result Blocks
+========================= */
+
+.info-box {
+  margin-top: 30px;
+  padding: 20px;
+  border-radius: 12px;
+  background: #f6f7ff;
+  border-left: 6px solid #667eea;
+}
+
+.info-box p {
+  margin-bottom: 10px;
+  color: #333;
+}
