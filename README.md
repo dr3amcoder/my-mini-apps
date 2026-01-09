@@ -10,32 +10,33 @@ A growing collection of React mini-apps built during my continuous learning jour
 
 ## 📋 Current Projects
 
-### App Details ℹ️
-- A wrapper component providing general info and layout for all mini apps
-- Demonstrates component composition and props usage
-
 ### OTP Generator 📱
+
 - Generates secure 6-digit one-time passwords
 - 5-second countdown timer with auto-expiration
 - Visual feedback on OTP status
 - Button disabled during countdown to prevent spam
 
 ### Character Counter ✍️
+
 - Real-time character counting
 - Input validation with visual warnings
 - Displays warning message when character count exceeds 20
 
 ### Superhero Form 🦸
+
 - Collects user input for superhero profiles
 - Controlled form elements with state management
 - Validation and dynamic feedback
 
 ### Event RSVP Form 🎉
+
 - RSVP form for events
 - Validates required fields
 - Dynamic updates and confirmation messages
 
 ### Shopping List 🛒
+
 - Add, edit, and remove items dynamically
 - Real-time UI updates
 - Local state management using `useState`
@@ -44,11 +45,11 @@ A growing collection of React mini-apps built during my continuous learning jour
 
 ## 🛠️ Technologies Used
 
-- **React (via Vite)** - Modern React development environment with hooks (`useState`, `useEffect`, `useRef`)  
-- **HTML5** - Structure  
-- **CSS3** - Styling (global `styles.css` for consistent look and feel)  
-- **JavaScript ES6+** - Core functionality  
-- **Vite** - Development server and build tool  
+- **React (via Vite)** - Modern React development environment with hooks (`useState`, `useEffect`, `useRef`)
+- **HTML5** - Structure
+- **CSS3** - Styling (global `styles.css` for consistent look and feel)
+- **JavaScript ES6+** - Core functionality
+- **Vite** - Development server and build tool
 
 ---
 
@@ -58,24 +59,24 @@ A growing collection of React mini-apps built during my continuous learning jour
 
 1. Clone the repository:
 
-   ```bash
+   ```
    git clone https://github.com/dr3amcoder/my-mini-apps.git
    cd my-mini-apps
    ```
 
 2. Install dependencies:
 
-   ```bash
+   ```
    npm install
    ```
 
 3. Start the development server:
-   ``` bash
+
+   ```
    npm run dev
    ```
 
 4. Open the browser at the URL provided by Vite (usually http://localhost:5173).
-
 
 ## 📚 Learning Approach
 
