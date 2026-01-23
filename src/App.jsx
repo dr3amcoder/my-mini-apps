@@ -17,7 +17,7 @@ const App = () => {
       </div>
 
       <img
-        src="/KittyCodes.png"
+        src={`${import.meta.env.BASE_URL}KittyCodes.png`}
         alt="KittyCodes"
         className="corner-badge"
         title="KittyCodes by dr3amcoder"

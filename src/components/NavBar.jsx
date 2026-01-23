@@ -14,7 +14,7 @@ const NavBar = () => {
         }}
       >
         <img
-          src="/KittyCodes.png"
+          src={`${import.meta.env.BASE_URL}KittyCodes.png`}
           alt="KittyCodes Logo"
           style={{ width: "40px", height: "40px" }}
         />
