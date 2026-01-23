@@ -6,14 +6,23 @@ import MiniApps from "./pages/MiniApps";
 
 const App = () => {
   return (
-    <div className="app-wrapper">
-      <NavBar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/mini-apps" element={<MiniApps />} />
-      </Routes>
-    </div>
+    <>
+      <div className="app-wrapper">
+        <NavBar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/mini-apps" element={<MiniApps />} />
+        </Routes>
+      </div>
+
+      <img
+        src="/KittyCodes.png"
+        alt="KittyCodes"
+        className="corner-badge"
+        title="KittyCodes by dr3amcoder"
+      />
+    </>
   );
 };
 
