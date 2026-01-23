@@ -1,19 +1,18 @@
-import AppDetails from "./components/AppDetails";
-import OTPGenerator from "./components/OTPGenerator";
-import CharacterCounter from "./components/CharacterCounter";
-import SuperheroForm from "./components/SuperheroForm";
-import EventRSVPForm from "./components/EventRSVPForm";
-import ShoppingList from "./components/ShoppingList";
+import { Routes, Route } from "react-router-dom";
+import NavBar from "./components/NavBar";
+import Home from "./pages/Home";
+import About from "./pages/About";
+import MiniApps from "./pages/MiniApps";
 
 const App = () => {
   return (
     <div className="app-wrapper">
-      <AppDetails />
-      <OTPGenerator />
-      <CharacterCounter />
-      <SuperheroForm />
-      <EventRSVPForm />
-      <ShoppingList />
+      <NavBar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/mini-apps" element={<MiniApps />} />
+      </Routes>
     </div>
   );
 };

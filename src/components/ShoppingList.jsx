@@ -13,26 +13,24 @@ const items = [
   "Dish Soap",
 ];
 
-
 const ShoppingList = () => {
   const [query, setQuery] = useState("");
   const [selected, setSelected] = useState([]);
 
   const filteredItems = useMemo(
     () =>
-      items.filter(item =>
-        item.toLowerCase().includes(query.toLowerCase())
-      ),
-    [query]
+      items.filter((item) => item.toLowerCase().includes(query.toLowerCase())),
+    [query],
   );
 
-  const toggleItem = useCallback(item => {
-    setSelected(prev =>
-      prev.includes(item)
-        ? prev.filter(i => i !== item)
-        : [...prev, item]
-    );
-  }, [setSelected]);
+  const toggleItem = useCallback(
+    (item) => {
+      setSelected((prev) =>
+        prev.includes(item) ? prev.filter((i) => i !== item) : [...prev, item],
+      );
+    },
+    [setSelected],
+  );
 
   return (
     <div className="container">
@@ -44,27 +42,24 @@ const ShoppingList = () => {
           className="input"
           type="search"
           value={query}
-          onChange={e => setQuery(e.target.value)}
+          onChange={(e) => setQuery(e.target.value)}
         />
       </div>
 
-      <ul className="section">
-        {filteredItems.map(item => (
-          <li key={item}>
-            <label>
-              <input
-                type="checkbox"
-                checked={selected.includes(item)}
-                onChange={() => toggleItem(item)}
-              />
-              {item}
-            </label>
-          </li>
+      <div className="section column">
+        {filteredItems.map((item) => (
+          <label key={item}>
+            <input
+              type="checkbox"
+              checked={selected.includes(item)}
+              onChange={() => toggleItem(item)}
+            />
+            <span>{item}</span>
+          </label>
         ))}
-      </ul>
+      </div>
     </div>
   );
 };
-
 
 export default ShoppingList;
