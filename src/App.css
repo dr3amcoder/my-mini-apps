@@ -302,3 +302,10 @@ nav a.active {
     margin-bottom: 15px;
   }
 }
+
+/* Pokemon Search */
+.pokemon-sprite {
+  image-rendering: pixelated;
+  width: 192px; /* or any integer multiple of original size as in 64px * 2 for w & h */
+  height: 192px;
+}
