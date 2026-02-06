@@ -14,7 +14,6 @@ const PokemonSearch = () => {
   );
 
   const handleSearch = () => {
-    // useEffect(() => {
     axios
       .get(`https://pokeapi.co/api/v2/pokemon/${searchInput}`)
       .then((response) => {
@@ -28,7 +27,6 @@ const PokemonSearch = () => {
         setPokemonType(response.data.types[0].type.name);
         setPokemonCries(response.data.cries.latest);
       });
-    // }, [searchInput]);
   };
 
   return (
