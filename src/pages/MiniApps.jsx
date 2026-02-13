@@ -4,6 +4,7 @@ import SuperheroForm from "../components/SuperheroForm";
 import EventRSVPForm from "../components/EventRSVPForm";
 import ShoppingList from "../components/ShoppingList";
 import PokemonSearch from "../components/PokemonSearch";
+import PokemonList from "../components/PokemonList";
 
 const MiniApps = () => {
   return (
@@ -14,6 +15,7 @@ const MiniApps = () => {
       <EventRSVPForm />
       <ShoppingList />
       <PokemonSearch />
+      <PokemonList />
     </>
   );
 };
