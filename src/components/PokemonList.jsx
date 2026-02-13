@@ -10,6 +10,9 @@ const PokemonList = () => {
   const [nextListURL, setNextListURL] = useState();
   const [prevListURL, setPrevURL] = useState();
   const [loading, setLoading] = useState(true);
+  const [selectedPokemon, setSelectedPokemon] = useState(null);
+  const [pokemonSprite, setPokemonSprite] = useState("");
+  const [pokemonCries, setPokemonCries] = useState();
 
   useEffect(() => {
     setLoading(true); // loads the loading message before the get call
@@ -49,17 +52,59 @@ const PokemonList = () => {
     prevListURL ? setCurrentListURL(prevListURL) : null;
   };
 
+  const handlePokemonDetail = (name) => {
+    axios.get(`https://pokeapi.co/api/v2/pokemon/${name}`).then((res) => {
+      setSelectedPokemon(res.data);
+      setPokemonSprite(
+        res.data.sprites.versions["generation-v"]["black-white"].animated
+          .front_default,
+      );
+      setPokemonCries(res.data.cries.latest);
+    });
+  };
+
+  console.log("selectedPokemon", selectedPokemon);
+
   return (
     <div className="container">
       <h2 className="title-md">Pokémon List</h2>
-      <p>Total Number of Pokemon: {pokemonData.count}</p>
-      <br />
+      <h2 className="componentTitle">
+        Total Number of Pokemon: {pokemonData.count}
+      </h2>
       <div>
-        Pokemon:
+        <h3 className="pokemonListTitle">Pokemon:</h3>
         {pokemonName.map((name) => (
-          <p key={name}>{name[0].toUpperCase() + name.substring(1)}</p>
+          <p
+            key={name}
+            onClick={() => handlePokemonDetail(name)}
+            style={{ cursor: "pointer", color: "#667eea" }}
+          >
+            {name[0].toUpperCase() + name.substring(1)}
+          </p>
         ))}
       </div>
+      <br />
+      {selectedPokemon && (
+        <div className="info-box">
+          <h3>
+            {selectedPokemon.name[0].toUpperCase() +
+              selectedPokemon.name.substring(1)}
+          </h3>
+          <img
+            className="pokemon-sprite"
+            src={pokemonSprite}
+            alt={selectedPokemon.name}
+          />
+          <p>Pokemon ID: {selectedPokemon.id}</p>
+          <p>Pokemon Type: {selectedPokemon.types[0].type.name}</p>
+          {pokemonCries && (
+            <audio controls key={pokemonCries}>
+              <source src={pokemonCries} type="audio/ogg" />
+            </audio>
+          )}
+        </div>
+      )}
+      <br />
       <br />
       {handlePrevList && (
         <button
@@ -70,6 +115,7 @@ const PokemonList = () => {
           Previous List
         </button>
       )}
+      <span style={{ margin: "5px" }}></span>
       {handleNextList && (
         <button
           className="btn"
