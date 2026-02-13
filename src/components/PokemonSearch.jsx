@@ -17,7 +17,6 @@ const PokemonSearch = () => {
     axios
       .get(`https://pokeapi.co/api/v2/pokemon/${searchInput}`)
       .then((response) => {
-        console.log(response.data);
         setPokemonName(response.data.name);
         setPokemonSprite(
           response.data.sprites.versions["generation-v"]["black-white"].animated
